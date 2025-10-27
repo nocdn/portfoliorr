@@ -1,4 +1,4 @@
-import { SVGProps } from "react"
+import { type SVGProps } from "react";
 
 export function MaterialSymbolsArrowLeftAlt(props: SVGProps<SVGSVGElement>) {
   return (
@@ -15,5 +15,5 @@ export function MaterialSymbolsArrowLeftAlt(props: SVGProps<SVGSVGElement>) {
         d="m10 18l-6-6l6-6l1.4 1.45L7.85 11H20v2H7.85l3.55 3.55z"
       />
     </svg>
-  )
+  );
 }
