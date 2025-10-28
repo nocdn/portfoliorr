@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
+
 // based on the lucide clock icon
 
 type AlarmClockIconProps = {
-  date?: Date
-  hours?: number
-  minutes?: number
-  seconds?: number
-  size?: number
-  color?: string
-  strokeWidth?: number
-  showFeet?: boolean
-  showBellArms?: boolean
-} & React.SVGProps<SVGSVGElement>
+  date?: Date;
+  hours?: number;
+  minutes?: number;
+  seconds?: number;
+  size?: number;
+  color?: string;
+  strokeWidth?: number;
+  showFeet?: boolean;
+  showBellArms?: boolean;
+} & React.SVGProps<SVGSVGElement>;
 
 const AlarmClockIcon: React.FC<AlarmClockIconProps> = ({
   date,
@@ -25,49 +26,49 @@ const AlarmClockIcon: React.FC<AlarmClockIconProps> = ({
   showBellArms = false,
   ...rest
 }) => {
-  const [time, setTime] = useState(new Date())
+  const [time, setTime] = useState(new Date());
 
   useEffect(() => {
     // if specific time props are provided, don't need to update the time.
     if (date || (hours !== null && minutes !== null)) {
       // if date was previously being used but isn't anymore, need to make sure to set the time to the current time.
       if (date) {
-        setTime(date)
+        setTime(date);
       }
-      return
+      return;
     }
 
     const timerId = setInterval(() => {
-      setTime(new Date())
-    }, 1000)
+      setTime(new Date());
+    }, 1000);
 
     return () => {
-      clearInterval(timerId)
-    }
-  }, [date, hours, minutes])
+      clearInterval(timerId);
+    };
+  }, [date, hours, minutes]);
 
   // derive h m s
-  let h: number
-  let m: number
-  let s: number
+  let h: number;
+  let m: number;
+  let s: number;
 
   if (date instanceof Date) {
-    h = date.getHours()
-    m = date.getMinutes()
-    s = date.getSeconds()
+    h = date.getHours();
+    m = date.getMinutes();
+    s = date.getSeconds();
   } else if (hours !== null && minutes !== null) {
-    h = hours
-    m = minutes
-    s = seconds
+    h = hours;
+    m = minutes;
+    s = seconds;
   } else {
-    h = time.getHours()
-    m = time.getMinutes()
-    s = time.getSeconds()
+    h = time.getHours();
+    m = time.getMinutes();
+    s = time.getSeconds();
   }
 
   // getting the angles to move the hands
-  const minuteAngle = m * 6 + s * 0.1
-  const hourAngle = (h % 12) * 30 + m * 0.5
+  const minuteAngle = m * 6 + s * 0.1;
+  const hourAngle = (h % 12) * 30 + m * 0.5;
 
   return (
     <svg
@@ -118,7 +119,7 @@ const AlarmClockIcon: React.FC<AlarmClockIconProps> = ({
         transform={`rotate(${minuteAngle} 12 13)`}
       />
     </svg>
-  )
-}
+  );
+};
 
-export default AlarmClockIcon
+export default AlarmClockIcon;

@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.6.2",
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
@@ -40,7 +41,21 @@
   },
   "prettier": {
     "plugins": [
+      "@ianvs/prettier-plugin-sort-imports",
       "prettier-plugin-tailwindcss"
+    ],
+    "importOrder": [
+      "<BUILTIN_MODULES>",
+      "",
+      "^(react/(.*)$)|^(react$)",
+      "^(react-dom/(.*)$)|^(react-dom$)",
+      "^(react-router/(.*)$)|^(react-router$)",
+      "",
+      "<THIRD_PARTY_MODULES>",
+      "",
+      "^@/(.*)$",
+      "",
+      "^[./]"
     ]
   }
 }

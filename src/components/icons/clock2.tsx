@@ -1,8 +1,8 @@
 type IconProps = {
-  size?: number | string
-  strokeWidth?: number
-  className?: string
-}
+  size?: number | string;
+  strokeWidth?: number;
+  className?: string;
+};
 
 export function HistoryTimerIcon({
   size = 24,
@@ -26,5 +26,5 @@ export function HistoryTimerIcon({
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }

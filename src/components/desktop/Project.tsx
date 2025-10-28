@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+
 import { ArrowUpRight } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function Project({
   className,

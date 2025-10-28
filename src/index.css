@@ -49,6 +49,16 @@
   font-display: block;
 }
 
+@font-face {
+  font-family: "Inter";
+  src:
+    url("/fonts/Inter-Variable.woff2") format("woff2-variations"),
+    url("/fonts/Inter-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}
+
 @theme {
   --font-switzer: "Switzer", system-ui, Avenir, Helvetica, Arial, sans-serif;
   --font-neue-montreal:
@@ -57,6 +67,7 @@
     "Geist Mono", system-ui, Avenir, Helvetica, Arial, sans-serif;
   --font-open-runde:
     "Open Runde", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-inter: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 :root {
