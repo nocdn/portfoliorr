@@ -2,9 +2,9 @@ import "react";
 
 import { AnimatePresence, motion } from "motion/react";
 
-import animatedCopyButtonImage from "../../public/images/copy.gif";
-import cornerComponentImage from "../../public/images/corner-buttons.png";
-import animatedTickerImage from "../../public/images/ticker.gif";
+import animatedCopyButtonImage from "/images/copy.gif";
+import cornerComponentImage from "/images/corner-buttons.png";
+import animatedTickerImage from "/images/ticker.gif";
 
 export default function ComponentCarousel({
   cardTick,
@@ -34,7 +34,7 @@ export default function ComponentCarousel({
       ),
     },
     {
-      name: "Ticker",
+      name: "Animated Ticker",
       image: animatedTickerImage,
       imageStyles: "",
       url: "https://ui.bartoszbak.org/ticker",
@@ -46,7 +46,7 @@ export default function ComponentCarousel({
       ),
     },
     {
-      name: "Animated Copy Button",
+      name: "Animated Button",
       image: animatedCopyButtonImage,
       imageStyles: "",
       url: "https://ui.bartoszbak.org/copy-button",
